@@ -38,3 +38,11 @@ section {
   border-bottom: 4px solid #abb5b8;
   box-shadow: 8px 8px 0px 0px #000000;
 }
+
+section input {
+  font-size: 1em;
+  font-weight: bold;
+  color: #696969;
+  padding-left: 8px;
+  border: none;
+}
