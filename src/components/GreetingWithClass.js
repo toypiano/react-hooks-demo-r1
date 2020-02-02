@@ -4,8 +4,8 @@ import { ThemeContext, LocaleContext } from "./context";
 
 export default class Greeting extends React.Component {
   state = {
-    name: "Paul",
-    surname: "Gilbert"
+    name: "Toy",
+    surname: "Piano"
   };
 
   handleNameChange = e => {
@@ -31,6 +31,9 @@ export default class Greeting extends React.Component {
                 onChange={this.handleSurnameChange}
               />
             </Row>
+            <LocaleContext.Consumer>
+              {locale => <Row label="From">{locale}</Row>}
+            </LocaleContext.Consumer>
           </section>
         )}
       </ThemeContext.Consumer>

@@ -9,4 +9,4 @@ export const locale = {
 };
 
 export const ThemeContext = React.createContext(theme.golden);
-export const LocaleContext = React.createContext(theme.can);
+export const LocaleContext = React.createContext(locale.can);
