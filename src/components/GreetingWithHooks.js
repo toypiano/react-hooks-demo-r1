@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import Row from "./Row";
 
 export default function Greeting(props) {
-  const name = ??
+  const [name, setName] = useState("Real");
+
+  const handleNameChange = e => {
+    setName(e.target.value);
+  };
   return (
     <section>
       <Row label="Name">
-        <input value={name} />
+        <input value={name} onChange={handleNameChange} />
       </Row>
     </section>
-  )
+  );
 }
