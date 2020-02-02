@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Row from "./Row";
+import { ThemeContext, LocaleContext } from "./context";
 
 export default function Greeting(props) {
   const [name, setName] = useState("Real");
   const [surname, setSurname] = useState("B");
+  const theme = useContext(ThemeContext);
+  const locale = useContext(LocaleContext);
 
   const handleNameChange = e => {
     setName(e.target.value);
@@ -12,13 +15,14 @@ export default function Greeting(props) {
     setSurname(e.target.value);
   };
   return (
-    <section>
+    <section className={theme}>
       <Row label="Name">
         <input value={name} onChange={handleNameChange} />
       </Row>
       <Row label="Surname">
         <input value={surname} onChange={handleSurnameChange} />
       </Row>
+      <Row label="From">{locale}</Row>
     </section>
   );
 }
