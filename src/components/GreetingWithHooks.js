@@ -12,6 +12,15 @@ export default function Greeting(props) {
     document.title = name + " " + surname;
   });
 
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  });
+
   const handleNameChange = e => {
     setName(e.target.value);
   };
@@ -27,6 +36,7 @@ export default function Greeting(props) {
         <input value={surname} onChange={handleSurnameChange} />
       </Row>
       <Row label="From">{locale}</Row>
+      <Row label="Width">{width}</Row>
     </section>
   );
 }
