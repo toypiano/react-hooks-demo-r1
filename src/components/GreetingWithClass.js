@@ -8,6 +8,14 @@ export default class Greeting extends React.Component {
     surname: "Piano"
   };
 
+  componentDidMount() {
+    document.title = this.state.name + " " + this.state.surname;
+  }
+
+  componentDidUpdate() {
+    document.title = this.state.name + " " + this.state.surname;
+  }
+
   handleNameChange = e => {
     this.setState({ name: e.target.value });
   };
