@@ -8,7 +8,9 @@ export default class Greeting extends React.Component {
   render() {
     return (
       <section>
-        <Row label="Name">{this.state.name}</Row>
+        <Row label="Name">
+          <input value={this.state.name} />
+        </Row>
       </section>
     );
   }
