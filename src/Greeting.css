@@ -39,10 +39,45 @@ section {
   box-shadow: 8px 8px 0px 0px #000000;
 }
 
+.row-title,
 section input {
   font-size: 1em;
   font-weight: bold;
   color: #696969;
   padding-left: 8px;
+}
+section input {
   border: none;
+}
+
+.row:not(:first-child) {
+  margin-top: 25px;
+}
+.row-content {
+  width: 100%;
+  font-size: 2em;
+  font-weight: bold;
+  color: #000000;
+  display: block;
+  margin-top: 15px;
+}
+.row-content input,
+.row-content input:focus {
+  padding: 7px;
+  color: #000000;
+  border-radius: 8px;
+  width: 100%;
+  outline: none;
+}
+.row-content input {
+  background-color: transparent;
+}
+.row-content input:focus {
+  background-color: #a0aaad;
+}
+.row-content input:focus::selection {
+  background: #fff3a3;
+}
+.row-content input:focus::-moz-selection {
+  background: #fff3a3;
 }
